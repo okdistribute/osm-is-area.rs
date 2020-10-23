@@ -20,6 +20,10 @@ osmisarea::way(&tags, &refs);
 // or osmisarea::relation(...)
 ```
 
-## license
+## TODO
+
+- [ ] Check polygon_features.json to see if a way is an area
+
+## License
 
 MIT

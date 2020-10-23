@@ -46,6 +46,7 @@ pub fn way (
 }
 
 // Decides if a relation is an area or not. Returns a boolean
+// A relation is an area when it has a tag "type" with value "multipolygon".
 //
 // # Examples
 //
