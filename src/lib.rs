@@ -10,7 +10,7 @@ mod tests {
         let tags = vec![
             (r"waterway", r"riverbank")
         ];
-        assert_eq!(true, crate::osmisarea::way(&tags, &refs).unwrap());
+        assert_eq!(true, crate::osmisarea::way(&tags, &refs));
     }
 
     #[test]
@@ -21,7 +21,7 @@ mod tests {
             (r"waterway", r"riverbank"),
             (r"area", r"no")
         ];
-        assert_eq!(false, crate::osmisarea::way(&tags, &refs).unwrap());
+        assert_eq!(false, crate::osmisarea::way(&tags, &refs));
     }
 
     #[test]
@@ -32,7 +32,7 @@ mod tests {
             (r"waterway", r"riverbank"),
             (r"area", r"yes")
         ];
-        assert_eq!(false, crate::osmisarea::way(&tags, &refs).unwrap());
+        assert_eq!(false, crate::osmisarea::way(&tags, &refs));
     }
 
     #[test]
@@ -43,7 +43,7 @@ mod tests {
         ];
         let end = 1252234;
         let members = vec![end, 23452234, 1252234, end, 52354653];
-        assert_eq!(true, crate::osmisarea::relation(&tags, &members).unwrap());
+        assert_eq!(true, crate::osmisarea::relation(&tags, &members));
     }
 
     #[test]
@@ -54,7 +54,7 @@ mod tests {
         ];
         let end = 1252234;
         let members = vec![end, 23452234, 1252234, end, 52354653];
-        assert_eq!(false, crate::osmisarea::relation(&tags, &members).unwrap());
+        assert_eq!(false, crate::osmisarea::relation(&tags, &members));
     }
 }
 
