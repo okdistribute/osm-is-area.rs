@@ -6,7 +6,7 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/okdistribute/osm-is-area.rs"
 authors = ["okdistribute <633012+okdistribute@users.noreply.github.com>"]
 edition = "2018"
-keywords = ["osm", "openstreetmap", "area", "way", "multipolygon", "map"]
+keywords = ["osm", "openstreetmap", "area", "way", "map"]
 exclude = [
   "*.pbf"
 ]
