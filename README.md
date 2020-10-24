@@ -2,10 +2,13 @@
 
 Tell if an OpenStreetMap element is an area or not. 
 
-First, decide if your element is a way or a relation, then pick the function
-that is best for you.
+First, decide if your element is a way or a relation. If it's neither, you're done cause hey, it's not an area! 
+
+If you are not so fortunate to have all your elements be nodes, look further...
 
 ## Usage
+
+An area must be a way or a relation. But not just any way or relation.
 
 According to [Overpass turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features), a way is considered an area if 
   1. It forms a closed loop
