@@ -5,24 +5,35 @@ Tell if an OpenStreetMap element is an area or not.
 First, decide if your element is a way or a relation, then pick the function
 that is best for you.
 
-## Example
+## Usage
 
-```rust
-use osmisarea;
+According to [Overpass turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features), a way is considered an area if 
+  1. It forms a closed loop
+  2. It is not tagged `area=no`
+  3. It conforms to one of the conditions for polygon tags.
 
-let end = 1252234;
-let refs = vec![end, 23452234, 28373423, end];
+```
+use osm_is_area;
 let tags = vec![
-    (r"waterway", r"riverbank")
+ (r"waterway", r"riverbank")
 ];
+let refs = vec![1, 3, 2, 1];
 
-osmisarea::way(&tags, &refs);
-// or osmisarea::relation(...)
+let is_area = osm_is_area::way(tags, refs);
 ```
 
-## TODO
+A relation is an area when it has a tag "type" with value "multipolygon".
+```
+use relation;
+let tags = vec![
+ (r"type", r"multipolygon")
+];
+let members = vec![1, 3, 2, 1];
 
-- [ ] Check polygon_features.json to see if a way is an area
+let is_area = crate::relation(tags, members);
+
+assert_eq!(true, is_area);
+```
 
 ## License
 
