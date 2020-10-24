@@ -4,12 +4,14 @@ use crate::polygon_features;
 /// 
 /// ```
 /// use osm_is_area;
+/// 
 /// let tags = vec![
 ///  (r"waterway", r"riverbank")
 /// ];
 /// let refs = vec![1, 3, 2, 1];
 ///
 /// let is_area = osm_is_area::way(&tags, &refs);
+///
 /// assert_eq!(true, is_area);
 /// ```
 ///

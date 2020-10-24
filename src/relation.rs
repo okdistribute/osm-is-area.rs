@@ -10,7 +10,6 @@
 /// let members = vec![1, 3, 2, 1];
 ///
 /// let is_area = osm_is_area::relation(&tags, &members);
-///
 /// assert_eq!(true, is_area);
 /// ```
 pub fn relation (

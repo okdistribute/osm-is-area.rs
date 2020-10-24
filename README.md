@@ -14,6 +14,7 @@ According to [Overpass turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo
 
 ```
 use osm_is_area;
+
 let tags = vec![
  (r"waterway", r"riverbank")
 ];
