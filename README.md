@@ -15,7 +15,7 @@ According to [Overpass turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo
   2. It is not tagged `area=no`
   3. It conforms to one of the conditions for polygon tags.
 
-```
+```rust
 use osm_is_area;
 
 let tags = vec![
@@ -28,7 +28,7 @@ assert_eq!(true, is_area);
 ```
 
 A relation is an area when it has a tag "type" with value "multipolygon".
-```
+```rust
 use osm_is_area;
 
 let tags = vec![
