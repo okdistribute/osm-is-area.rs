@@ -1,9 +1,17 @@
 use crate::polygon_features;
 
-/// Returns true if the given way is an area.
+/// Returns true if the given way is an area according to [Overpass turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features)
+/// 
+/// ```
+/// use osm_is_area;
+/// let tags = vec![
+///  (r"waterway", r"riverbank")
+/// ];
+/// let refs = vec![1, 3, 2, 1];
 ///
-/// According to
-/// https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features
+/// let is_area = osm_is_area::way(&tags, &refs);
+/// assert_eq!(true, is_area);
+/// ```
 ///
 pub fn way (
     tags: &Vec<(&str, &str)>,

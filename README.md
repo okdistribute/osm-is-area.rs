@@ -19,19 +19,20 @@ let tags = vec![
 ];
 let refs = vec![1, 3, 2, 1];
 
-let is_area = osm_is_area::way(tags, refs);
+let is_area = osm_is_area::way(&tags, &refs);
+assert_eq!(true, is_area);
 ```
 
 A relation is an area when it has a tag "type" with value "multipolygon".
 ```
-use relation;
+use osm_is_area;
+
 let tags = vec![
  (r"type", r"multipolygon")
 ];
 let members = vec![1, 3, 2, 1];
 
-let is_area = crate::relation(tags, members);
-
+let is_area = osm_is_area::relation(&tags, &members);
 assert_eq!(true, is_area);
 ```
 
