@@ -1,9 +1,11 @@
 [package]
 name = "osm-is-area"
 description = "Answering the age-old question: Is an OpenStreetMap element is an area or not?"
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/okdistribute/osm-is-area.rs"
+homepage = "https://github.com/okdistribute/osm-is-area.rs"
+documentation = "https://docs.rs/osm-is-area/"
 authors = ["okdistribute <633012+okdistribute@users.noreply.github.com>"]
 edition = "2018"
 keywords = ["osm", "openstreetmap", "area", "way", "map"]
