@@ -3,9 +3,10 @@ name = "osm-is-area"
 description = "Answering the age-old question: Is an OpenStreetMap element is an area or not?"
 version = "0.1.0"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/okdistribute/osm-is-area.rs"
 authors = ["okdistribute <633012+okdistribute@users.noreply.github.com>"]
 edition = "2018"
-keywords = ["osm", "open street map", "openstreetmap", "area", "way", "multipolygon", "map"]
+keywords = ["osm", "openstreetmap", "area", "way", "multipolygon", "map"]
 exclude = [
   "*.pbf"
 ]
