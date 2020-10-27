@@ -1,10 +1,10 @@
 use crate::polygon_features;
 
 /// Returns true if the given way is an area according to [Overpass turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features)
-/// 
+///
 /// ```
 /// use osm_is_area;
-/// 
+///
 /// let tags = vec![
 ///  (r"waterway", r"riverbank")
 /// ];
@@ -15,10 +15,7 @@ use crate::polygon_features;
 /// assert_eq!(true, is_area);
 /// ```
 ///
-pub fn way (
-    tags: &Vec<(&str, &str)>,
-    refs: &Vec<i64>
-) -> bool {
+pub fn way(tags: &Vec<(&str, &str)>, refs: &Vec<i64>) -> bool {
     let features = &polygon_features::get_polygon_features();
 
     if refs.len() < 3 {
@@ -33,7 +30,7 @@ pub fn way (
     let first = refs_iter.next();
     let last = refs_iter.last();
 
-    // A way is considered an area if 
+    // A way is considered an area if
     // 1. It forms a closed loop
     if first == last {
         // 2. It is not tagged `area=no`
@@ -44,9 +41,9 @@ pub fn way (
         match opt {
             Some(_) => {
                 return false;
-            },
+            }
             None => {
-                // 3. At least one of the following conditions is true 
+                // 3. At least one of the following conditions is true
                 let mut is_area = false;
                 tags.into_iter().for_each(|tag| {
                     let key = tag.0;
@@ -54,7 +51,7 @@ pub fn way (
 
                     let mut iter = features
                         .into_iter()
-                        .filter(|condition| { condition.key == key });
+                        .filter(|condition| condition.key == key);
 
                     let maybe_condition = iter.next();
                     if maybe_condition.is_some() {
@@ -88,4 +85,3 @@ pub fn way (
 
     return false;
 }
-

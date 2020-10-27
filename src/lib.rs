@@ -1,6 +1,6 @@
 //! Returns true if the given way is an area according to [Overpass turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features)
-//! 
-//! ## Examples 
+//!
+//! ## Examples
 //! ```
 //! use osm_is_area;
 //!
@@ -33,4 +33,3 @@ mod relation;
 pub use relation::*;
 
 pub mod polygon_features;
-
