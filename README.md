@@ -1,14 +1,13 @@
 # osm-is-area
 
-Tell if an OpenStreetMap element is an area or not. 
+An OpenSreetMap area must be a way or a relation. But not just any way or relation. 
 
-First, decide if your element is a way or a relation. If it's neither, you're done cause hey, it's not an area! 
+If you are not so fortunate that all your elements are nodes, look further...
 
-If you are not so fortunate to have all your elements be nodes, look further...
+## API
 
-## Usage
 
-An area must be a way or a relation. But not just any way or relation.
+### `osm_is_area::way`
 
 According to [Overpass turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features), a way is considered an area if 
   1. It forms a closed loop
@@ -26,6 +25,8 @@ let refs = vec![1, 3, 2, 1];
 let is_area = osm_is_area::way(&tags, &refs);
 assert_eq!(true, is_area);
 ```
+
+### `osm_is_area::relation`
 
 A relation is an area when it has a tag "type" with value "multipolygon".
 ```rust
