@@ -69,12 +69,16 @@ pub fn way(tags: &Vec<(&str, &str)>, refs: &Vec<i64>) -> bool {
                         }
                         if condition.polygon == "blacklist" {
                             is_area = true;
-                            let blacklist = &condition.values;
-                            blacklist.into_iter().for_each(|val| {
-                                if &value == val {
-                                    is_area = false
-                                }
-                            });
+                            if key == "natural" && value == "coastline" {
+                                is_area = true;
+                            } else {
+                                let blacklist = &condition.values;
+                                blacklist.into_iter().for_each(|val| {
+                                    if &value == val {
+                                        is_area = false
+                                    }
+                                });
+                            }
                         }
                     }
                 });
