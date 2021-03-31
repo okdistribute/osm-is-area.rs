@@ -15,7 +15,7 @@ use crate::polygon_features;
 /// assert_eq!(true, is_area);
 /// ```
 ///
-pub fn way(tags: &[(&str, &str)], refs: &[i64]) -> bool {
+pub fn way<X>(tags: &[(&str, &str)], refs: &[X]) -> bool where X: PartialEq {
     let features = &polygon_features::get_polygon_features();
 
     if refs.len() < 3 {
