@@ -15,7 +15,7 @@ use crate::polygon_features;
 /// assert_eq!(true, is_area);
 /// ```
 ///
-pub fn way(tags: &Vec<(&str, &str)>, refs: &Vec<i64>) -> bool {
+pub fn way(tags: &[(&str, &str)], refs: &[i64]) -> bool {
     let features = &polygon_features::get_polygon_features();
 
     if refs.len() < 3 {
