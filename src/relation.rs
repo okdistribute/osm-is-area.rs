@@ -12,7 +12,7 @@
 /// let is_area = osm_is_area::relation(&tags, &members);
 /// assert_eq!(true, is_area);
 /// ```
-pub fn relation(tags: &Vec<(&str, &str)>, members: &Vec<i64>) -> bool {
+pub fn relation(tags: &[(&str, &str)], members: &[i64]) -> bool {
     if members.len() == 0 {
         return false;
     }
