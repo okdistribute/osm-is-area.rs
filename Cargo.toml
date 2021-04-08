@@ -1,7 +1,7 @@
 [package]
 name = "osm-is-area"
 description = "Is this OpenStreetMap element an area or not?"
-version = "0.1.4"
+version = "1.0.0"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/okdistribute/osm-is-area.rs"
 homepage = "https://github.com/okdistribute/osm-is-area.rs"
